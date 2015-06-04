@@ -4,7 +4,7 @@ require_once 'db.php';
 
 $users = new api('users');
 $auth = new api('auth');
-
+db_user::getInstance()->log();
 
 $users->getOne(function($id) {    
     $user = db_user::getInstance()->getOne($id);
@@ -12,7 +12,7 @@ $users->getOne(function($id) {
     echo $user ? json_encode($user): json_encode([]);
 });
 $users->getAll(function() {
-    db_user::getInstance()->log();
+    //db_user::getInstance()->log();
     $users = db_user::getInstance()->getAll();
     api::$status = 200;
     echo json_encode($users);
