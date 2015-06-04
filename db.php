@@ -1,11 +1,4 @@
 <?php
-
-$username = "root";
-$password = "";
-$hostname = "localhost";
-$db = 'example_api';
-$mysqli = new mysqli($hostname, $username, $password, $db);
-
 class db_user {
 
     private $mysqli;
